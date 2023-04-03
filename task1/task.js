@@ -55,8 +55,8 @@ chatWidget.onclick = () => {
 chatWidget.onkeyup = (key) => {
     clearInterval(inactivity);
     if (key.code === 'Enter') {
-        if (chatInput.value) {
-            chatClient(chatInput.value);
+        if (chatInput.value.trim()) {
+            chatClient(chatInput.value.trim());
             chatInput.value = '';
             chatBot(responsesList[Math.floor(Math.random() * responsesList.length)]);
             inactivity = setInterval(() => {
